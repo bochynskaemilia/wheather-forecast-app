@@ -1,4 +1,4 @@
-# Wheather forecast app
+# Weather forecast app
 
 ## Available Scripts
 
