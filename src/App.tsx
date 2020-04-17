@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     dispatch(actions.geolocationSaga.fetchGeolocation());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">

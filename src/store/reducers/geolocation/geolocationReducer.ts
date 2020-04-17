@@ -1,18 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IProcessedGeoposition } from '../../../types/geolocationTypes';
 
-export interface Coordinates {
-  lat?: number;
-  long?: number;
-}
-
-interface InitialState extends Coordinates {
-  disallowed: boolean,
+interface InitialState {
+  userLocationKey?: string,
+  unavailable: boolean,
+  isPending: boolean,
 }
 
 const initialState: InitialState = {
-  lat: undefined,
-  long: undefined,
-  disallowed: false,
+  userLocationKey: undefined,
+  unavailable: false,
+  isPending: false,
 };
 
 const geolocationReducer = createSlice({
@@ -22,13 +20,16 @@ const geolocationReducer = createSlice({
 
   reducers: {
 
-    setCoordinates(state, { payload }: PayloadAction<Coordinates>) {
-      state.lat = payload.lat;
-      state.long = payload.long;
+    setUserLocationKey(state, { payload }: PayloadAction<IProcessedGeoposition>) {
+      state.userLocationKey = payload.userLocationKey;
     },
 
-    setLocationDisallowed(state, { payload }: PayloadAction<boolean>) {
-      state.disallowed = payload;
+    setLocationUnavailable(state, { payload }: PayloadAction<boolean>) {
+      state.unavailable = payload;
+    },
+
+    setIsPending(state, { payload }: PayloadAction<boolean>) {
+      state.isPending = payload;
     },
 
   },

@@ -1,6 +1,6 @@
-import { FetchedGeolocation } from '../types/geolocationTypes';
+import { IFetchedGeolocation } from '../types/geolocationTypes';
 
-const getUserPosition = (options: object = {}): Promise<FetchedGeolocation> => new Promise(
+const getUserPosition = (options: object = {}): Promise<IFetchedGeolocation> => new Promise(
   (resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject, options);
   },

@@ -1,11 +1,11 @@
 import { NullableNumber } from './genericTypes';
 
-export interface FetchedGeolocation {
-  coords: FetchedCoordinates,
+export interface IFetchedGeolocation {
+  coords: IFetchedCoordinates,
   timestamp: number,
 }
 
-export interface FetchedCoordinates {
+export interface IFetchedCoordinates {
   latitude: number,
   longitude: number,
   altitude: NullableNumber,
@@ -13,4 +13,8 @@ export interface FetchedCoordinates {
   altitudeAccuracy: NullableNumber
   heading: NullableNumber
   speed: NullableNumber
+}
+
+export interface IProcessedGeoposition {
+  userLocationKey: string,
 }

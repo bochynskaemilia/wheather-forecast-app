@@ -1,24 +1,41 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { FetchedCoordinates } from '../../../types/geolocationTypes';
-import { Coordinates } from './geolocationReducer';
+import { IFetchedCoordinates } from '../../../types/geolocationTypes';
 
 import actions from '../../actions';
 import geolocationTools from '../../../utils/geolocationTools';
+import apiService from '../../../services/apiService';
+import URLS from '../../../constants/urls';
+import geolocationService from '../../../services/geolocationService';
+import { GET } from '../../../constants/methods';
 
 export function* runFetchGeolocation() {
+  yield put(actions.geolocation.setIsPending(true));
+
   try {
-    const { coords }: { coords: FetchedCoordinates } = yield call(geolocationTools.getUserPosition);
+    const { coords }: { coords: IFetchedCoordinates } = yield call(
+      geolocationTools.getUserPosition,
+    );
 
-    const payload = {
-      lat: coords.latitude,
-      long: coords.longitude,
-    } as Coordinates;
+    const response = yield call(
+      apiService.request,
+      GET,
+      {
+        url: `${URLS.GEOPOSITION}${coords.latitude},${coords.longitude}`,
+        processData: geolocationService.processData,
+      },
+    );
 
-    yield put(actions.geolocation.setCoordinates(payload));
-    yield put(actions.geolocation.setLocationDisallowed(false));
+    if (response.isError || !response.data.userLocationKey) {
+      yield put(actions.geolocation.setLocationUnavailable(true));
+    } else {
+      yield put(actions.geolocation.setUserLocationKey(response.data));
+      yield put(actions.geolocation.setLocationUnavailable(false));
+    }
   } catch (error) {
-    yield put(actions.geolocation.setLocationDisallowed(true));
+    yield put(actions.geolocation.setLocationUnavailable(true));
   }
+
+  yield put(actions.geolocation.setIsPending(false));
 }
 
 export function* fetchGeolocationSaga() {
