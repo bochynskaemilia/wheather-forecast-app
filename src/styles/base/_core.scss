@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $page-font-family;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.hidden {
+  display: none;
+}

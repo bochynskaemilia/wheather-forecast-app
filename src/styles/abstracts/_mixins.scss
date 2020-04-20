@@ -1,0 +1,9 @@
+@mixin header-gradient {
+  background-image: linear-gradient(to right, rgba(000, 0, 0, 0), rgba(000, 0, 0, 1));
+}
+
+@mixin main-image {
+  background-image: url("../../../public/images/clouds.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}

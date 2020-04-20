@@ -1,0 +1,16 @@
+.logo {
+
+  display: flex;
+  align-items: center;
+  font-size: $font-size-logo;
+  font-weight: $font-weight-highlight;
+
+  &__icon {
+    color: $primary-color;
+    font-size: $font-size-logo-sun;
+  }
+
+  &__caption {
+    margin: 0 $big-margin 0 $little-margin;
+  }
+}

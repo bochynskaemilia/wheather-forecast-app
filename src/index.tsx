@@ -4,6 +4,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './App';
 import initStore from './store';
+import iconLib from './iconLib';
+
+iconLib.init();
 
 ReactDOM.render(
   <React.StrictMode>

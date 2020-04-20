@@ -1,0 +1,16 @@
+.header {
+
+  //background-color: gray;
+
+  height: $header-height;
+  width: 100%;
+  display: flex;
+  padding: 0 $page-margin;
+  position: fixed;
+
+  color: $header-text-color;
+
+  &:hover {
+    @include header-gradient;
+  }
+}
