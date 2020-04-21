@@ -7,9 +7,23 @@ $small-margin: 0.5rem;
 $regular-margin: 1rem;
 $big-margin: 2rem;
 
+$little-padding: 0.25rem;
+$small-padding: 0.5rem;
+$regular-padding: 1rem;
+$big-padding: 2rem;
+
 // sizes
 
 $header-height: 4.375rem;
+$daily-image-height: 23.125rem;
+
+$icon-big: 2rem;
+
+// loader
+
+$loader-size: 6.25rem;
+$loader-radius: 50%;
+$loader-animation: spin 2s linear infinite;
 
 // font
 
@@ -28,6 +42,15 @@ $small-letter-spacing: -0.0625rem;
 
 // color
 
-$primary-color: #f05514;
+$primary-color: #fd7d47;
+$secondary-color: #adb5bd;
+$font-color: #495057;
 $header-text-color: #fff;
 $transparent-color: #00000000;
+$overlay-color: rgba(000, 0, 0, 0.2);
+$white: #fff;
+$danger-color: #f35120;
+
+// radius
+
+$primary-radius: 0.188rem;

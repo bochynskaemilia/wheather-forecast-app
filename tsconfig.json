@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "../wheather-forecast-app",
     "target": "es5",
     "lib": [
       "dom",

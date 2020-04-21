@@ -3,12 +3,16 @@ import { IProcessedGeoposition } from '../../../types/geolocationTypes';
 
 interface InitialState {
   userLocationKey?: string,
+  userLocation?: string,
+  userCountry?: string,
   unavailable: boolean,
   isPending: boolean,
 }
 
 const initialState: InitialState = {
   userLocationKey: undefined,
+  userLocation: undefined,
+  userCountry: undefined,
   unavailable: false,
   isPending: false,
 };
@@ -22,6 +26,8 @@ const geolocationReducer = createSlice({
 
     setUserLocationKey(state, { payload }: PayloadAction<IProcessedGeoposition>) {
       state.userLocationKey = payload.userLocationKey;
+      state.userLocation = payload.location;
+      state.userCountry = payload.country;
     },
 
     setLocationUnavailable(state, { payload }: PayloadAction<boolean>) {

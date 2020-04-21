@@ -1,0 +1,44 @@
+.error-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $overlay-color;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-modal {
+  border-bottom: 0.125rem solid $danger-color;
+  border-radius: $primary-radius;
+}
+
+.error {
+  padding: $big-padding;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__message {
+    padding-left: $little-padding;
+  }
+
+  &__message {
+    padding-left: $little-padding;
+  }
+
+  &__icon {
+    color: $danger-color;
+  }
+
+  &__refresh {
+    color: $secondary-color;
+    cursor: pointer;
+    font-size: $icon-big;
+    margin-top: $big-margin;
+  }
+}

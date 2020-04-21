@@ -16,7 +16,7 @@ const menuItems = [
 const Menu: FC = () => (
   <>
     {
-      menuItems.map((item) => <MenuItem label={item.label} link={item.link} />)
+      menuItems.map((item) => <MenuItem key={item.label} label={item.label} link={item.link} />)
     }
   </>
 );

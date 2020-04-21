@@ -5,6 +5,12 @@ export interface IFetchedGeolocation {
   timestamp: number,
 }
 
+export interface IFetchedCountry {
+  ID: string,
+  LocalizedName: string,
+  EnglishName: string,
+}
+
 export interface IFetchedCoordinates {
   latitude: number,
   longitude: number,
@@ -17,4 +23,6 @@ export interface IFetchedCoordinates {
 
 export interface IProcessedGeoposition {
   userLocationKey: string,
+  location: string,
+  country: string,
 }

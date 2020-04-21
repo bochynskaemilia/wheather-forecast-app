@@ -1,6 +1,16 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSun } from '@fortawesome/free-solid-svg-icons';
+import {
+  faSun,
+  faExclamationCircle,
+  faRedo,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
 
 export default {
-  init: () => library.add(faSun),
+  init: () => library.add(
+    faSun,
+    faExclamationCircle,
+    faRedo,
+    faTimes,
+  ),
 };
