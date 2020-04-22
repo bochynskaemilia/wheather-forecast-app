@@ -1,7 +1,44 @@
 .daily-page {
+  background: $background-color;
+  min-height: 100vh;
+
+  .tile {
+    background: white;
+    padding: $regular-padding;
+    margin-bottom: $big-margin;
+  }
+
   &__top {
     height: $daily-image-height;
     @include main-image;
     border-bottom: 0.125rem solid $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__body {
+    margin: $big-margin $page-margin 0 $page-margin;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .weather-item {
+    margin: 0 $little-margin;
+  }
+
+  .body-header {
+    font-size: $font-size-big;
+    margin: $regular-margin 0;
+    border-bottom: 0.125rem solid $primary-color;
+  }
+
+  .weather-list {
+    margin: $regular-margin 0;
+
+    &__item {
+      margin: $regular-margin 0;;
+    }
   }
 }

@@ -18,12 +18,12 @@ export function* runFetchCurrentWeather() {
     apiService.request,
     GET,
     {
-      url: `${URLS.CURRENT_WEATHER}${userLocationKey}?`,
+      url: `${URLS.CURRENT_WEATHER}${userLocationKey}?details=true`,
       processData: currentWeatherService.processData,
     },
   );
 
-  if (response.isError) {
+  if (response.isError || !response.data) {
     yield put(actions.currentWeather.setIsError);
   } else {
     yield put(actions.currentWeather.setCurrentWeather(response.data));

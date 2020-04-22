@@ -18,6 +18,7 @@
 
 .error {
   padding: $big-padding;
+  border-radius: $primary-radius;
   background: $white;
   display: flex;
   flex-direction: column;

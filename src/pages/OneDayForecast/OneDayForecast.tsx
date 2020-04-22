@@ -4,6 +4,7 @@ import PageTop from '../../components/dailyWeatherPage/PageTop/PageTop';
 import selectors from '../../store/selectors';
 import Loader from '../../components/Loader/Loader';
 import Error from '../../components/Error/Error';
+import PageBody from '../../components/dailyWeatherPage/PageBody/PageBody';
 
 const OneDayForecast = () => {
   const userLocationKey = useSelector(selectors.geolocation.getUserLocationKey);
@@ -23,7 +24,12 @@ const OneDayForecast = () => {
         geolocationPending && <Loader />
       }
       {
-        userLocationKey && <PageTop />
+        userLocationKey && (
+          <>
+            <PageTop />
+            <PageBody />
+          </>
+        )
       }
     </div>
   );
