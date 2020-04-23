@@ -1,7 +1,7 @@
 .widget {
   background: $tertiary-color;
   margin: $regular-margin;
-  padding: $regular-padding;
+  padding: $small-padding $regular-padding;
   border-radius: $primary-radius;
   color: $font-secondary-color;
 }

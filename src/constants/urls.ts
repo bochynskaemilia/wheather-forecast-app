@@ -5,4 +5,4 @@ export default {
   CURRENT_WEATHER: '/currentconditions/v1/',
 };
 
-export const API_KEY = 'RFm0kGCF9tPT8o6YHUjoS9Ksrnss3rMW';
+export const API_KEY = 'kEqSF3Hcz350xoqgNQPCgCbyAlpJSsBp';

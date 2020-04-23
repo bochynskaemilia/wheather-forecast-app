@@ -1,7 +1,6 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import Suggest from 'react-autosuggest';
 import { useDispatch, useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import actions from '../../store/actions';
 import selectors from '../../store/selectors';
@@ -9,8 +8,6 @@ import { IProcessedGeoposition } from '../../types/geolocationTypes';
 import Error from '../Error/Error';
 
 const Autocomplete = () => {
-  const [location, setLocation] = useState<IProcessedGeoposition | null>(null);
-
   const searchValue = useSelector(selectors.searchWeather.getSearchValue);
   const locations = useSelector(selectors.searchWeather.getAutocompleteLocations);
   const isError = useSelector(selectors.searchWeather.isAutocompleteError);
@@ -32,10 +29,10 @@ const Autocomplete = () => {
   );
 
   const handleSelect = useCallback(
-    (_event, { suggestion }: { suggestion: IProcessedGeoposition }) => {
-      setLocation(suggestion);
+    () => {
+      dispatch(actions.searchWeather.setSearchValue(''));
     },
-    [],
+    [dispatch],
   );
 
   const handleClear = useCallback(
@@ -46,7 +43,11 @@ const Autocomplete = () => {
   );
 
   const renderSuggestion = useCallback(
-    (suggestion: IProcessedGeoposition) => <span>{suggestion.location}</span>,
+    (suggestion: IProcessedGeoposition) => (
+      <Link to={`/${suggestion.location}/${suggestion.country}/${suggestion.userLocationKey}`}>
+        <span className="autocomplete-item">{`${suggestion.location}, ${suggestion.country}`}</span>
+      </Link>
+    ),
     [],
   );
 
@@ -58,6 +59,7 @@ const Autocomplete = () => {
   const props = {
     value: searchValue,
     onChange: handleChange,
+    placeholder: 'Search weather',
   };
 
   if (isError) {
@@ -67,24 +69,15 @@ const Autocomplete = () => {
   }
 
   return (
-    <div>
-      <Suggest
-        suggestions={locations}
-        onSuggestionsFetchRequested={handleSuggest}
-        onSuggestionsClearRequested={handleClear}
-        renderSuggestion={renderSuggestion}
-        getSuggestionValue={getSuggestionValue}
-        onSuggestionSelected={handleSelect}
-        inputProps={props}
-      />
-      {
-        location && (
-          <Link to={`${location?.location}/${location?.country}/${location?.userLocationKey}`}>
-            <FontAwesomeIcon className="search" icon="search-location" />
-          </Link>
-        )
-      }
-    </div>
+    <Suggest
+      suggestions={locations}
+      onSuggestionsFetchRequested={handleSuggest}
+      onSuggestionsClearRequested={handleClear}
+      renderSuggestion={renderSuggestion}
+      getSuggestionValue={getSuggestionValue}
+      onSuggestionSelected={handleSelect}
+      inputProps={props}
+    />
   );
 };
 

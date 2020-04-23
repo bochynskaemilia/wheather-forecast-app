@@ -1,0 +1,40 @@
+.react-autosuggest {
+  &__container {
+    margin: $regular-margin;
+    position: relative;
+  }
+
+  &__input {
+    line-height: inherit;
+    max-height: 2rem;
+    min-width: 12rem;
+    padding: 0 $small-padding;
+    outline: none;
+    border-radius: $primary-radius;
+    color: $font-color;
+    font-size: $font-size-small;
+    overflow: scroll;
+  }
+
+  &__suggestions-container--open {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    background: $white;
+    max-height: 20rem;
+    width: 100%;
+    border-radius: $primary-radius;
+    box-shadow: -0.063rem 0.063rem 0.188rem 0 rgba(209, 209, 209, 1);
+    border-top: 0.063rem solid rgba(209, 209, 209, 1);
+    padding: $small-padding;
+    padding-bottom: 0;
+  }
+
+  &__suggestion {
+    margin-bottom: $small-margin;
+  }
+}
+
+.autocomplete-item {
+  color: $font-color;
+}
