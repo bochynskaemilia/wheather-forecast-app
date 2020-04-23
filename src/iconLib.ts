@@ -4,6 +4,7 @@ import {
   faExclamationCircle,
   faRedo,
   faTimes,
+  faSearchLocation,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default {
@@ -12,5 +13,6 @@ export default {
     faExclamationCircle,
     faRedo,
     faTimes,
+    faSearchLocation,
   ),
 };

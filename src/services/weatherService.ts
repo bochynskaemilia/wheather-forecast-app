@@ -1,6 +1,9 @@
-import { ICurrentWeatherFetched, ICurrentWeatherProcessed } from '../types/currentWeather';
+import { ICurrentWeatherFetched, IWeatherProcessed } from '../types/currentWeatherTypes';
+import apiService from './apiService';
+import { GET } from '../constants/methods';
+import URLS from '../constants/urls';
 
-const processData = (currentWeatherFetched: ICurrentWeatherFetched[]): ICurrentWeatherProcessed => {
+const processData = (currentWeatherFetched: ICurrentWeatherFetched[]): IWeatherProcessed => {
   const {
     WeatherText,
     HasPrecipitation,
@@ -26,9 +29,18 @@ const processData = (currentWeatherFetched: ICurrentWeatherFetched[]): ICurrentW
       value: RealFeelTemperature.Metric.Value,
       unit: RealFeelTemperature.Metric.Unit,
     },
-  } as ICurrentWeatherProcessed;
+  } as IWeatherProcessed;
 };
+
+const runFetchWeather = (userLocationKey: string) => apiService.request(
+  GET,
+  {
+    url: `${URLS.CURRENT_WEATHER}${userLocationKey}?details=true`,
+    processData,
+  },
+);
 
 export default {
   processData,
+  runFetchWeather,
 };

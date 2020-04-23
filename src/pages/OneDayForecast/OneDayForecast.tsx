@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import PageTop from '../../components/dailyWeatherPage/PageTop/PageTop';
 import selectors from '../../store/selectors';
 import Loader from '../../components/Loader/Loader';
 import Error from '../../components/Error/Error';
@@ -12,7 +11,7 @@ const OneDayForecast = () => {
   const geolocationPending = useSelector(selectors.geolocation.isPending);
 
   return (
-    <div className="daily-page">
+    <div className="daily-page page">
       {
         geolocationUnavailable && (
           <div className="flex-full-width">
@@ -24,12 +23,7 @@ const OneDayForecast = () => {
         geolocationPending && <Loader />
       }
       {
-        userLocationKey && (
-          <>
-            <PageTop />
-            <PageBody />
-          </>
-        )
+        userLocationKey && <PageBody />
       }
     </div>
   );

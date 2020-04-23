@@ -21,17 +21,11 @@ function App() {
       <Header />
       <Switch>
 
-        <Route path={paths.search}>
-          <ForecastSearch />
-        </Route>
+        <Route path={paths.search} component={ForecastSearch} />
 
-        <Route path={paths.longTermForecast}>
-          <LongTermForecast />
-        </Route>
+        <Route path={paths.longTermForecast} component={LongTermForecast} />
 
-        <Route path={paths.root}>
-          <OneDayForecast />
-        </Route>
+        <Route path={paths.root} component={OneDayForecast} />
 
       </Switch>
     </div>

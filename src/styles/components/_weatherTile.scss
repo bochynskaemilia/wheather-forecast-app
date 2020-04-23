@@ -1,0 +1,13 @@
+.tile {
+  background: white;
+  padding: $regular-padding;
+  margin-bottom: $big-margin;
+}
+
+.weather-list {
+  margin: $regular-margin 0;
+
+  &__item {
+    margin: $regular-margin 0;;
+  }
+}

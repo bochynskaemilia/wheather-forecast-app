@@ -1,16 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ICurrentWeatherProcessed } from '../../../types/currentWeather';
+import { IWeatherProcessed } from '../../../types/currentWeatherTypes';
 
 interface InitialState {
   isError: boolean,
   isPending: boolean,
-  currentWeather: ICurrentWeatherProcessed | null,
+  currentWeather?: IWeatherProcessed,
 }
 
 const initialState: InitialState = {
   isError: false,
   isPending: false,
-  currentWeather: null,
+  currentWeather: undefined,
 };
 
 const currentWeatherReducer = createSlice({
@@ -20,7 +20,7 @@ const currentWeatherReducer = createSlice({
 
   reducers: {
 
-    setCurrentWeather(state, { payload }: PayloadAction<ICurrentWeatherProcessed>) {
+    setCurrentWeather(state, { payload }: PayloadAction<IWeatherProcessed>) {
       state.currentWeather = payload;
     },
 

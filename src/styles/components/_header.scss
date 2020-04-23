@@ -1,15 +1,33 @@
 .header {
-  height: $header-height;
-  width: 100%;
-  display: flex;
   padding: 0 $page-margin;
-  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   color: $font-secondary-color;
-
+  min-height: $header-height;
   @include header-gradient;
 
   &:hover {
     @include header-gradient-hover;
   }
+
+  &__left, &__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.header-image {
+  width: 100%;
+  @include main-image;
+  min-height: $header-height;
+  position: fixed;
 }

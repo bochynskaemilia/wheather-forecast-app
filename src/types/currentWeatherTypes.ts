@@ -82,7 +82,7 @@ interface IUnit {
   unit: string,
 }
 
-export interface ICurrentWeatherProcessed {
+export interface IWeatherProcessed {
   temperature: IUnit,
   weatherText: string,
   hasPrecipitation: boolean,

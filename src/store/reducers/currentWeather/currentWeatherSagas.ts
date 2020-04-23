@@ -1,13 +1,8 @@
-import {
-  call, put, select, takeLatest,
-} from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 import actions from '../../actions';
-import apiService from '../../../services/apiService';
-import URLS from '../../../constants/urls';
-import { GET } from '../../../constants/methods';
 import selectors from '../../selectors';
-import currentWeatherService from '../../../services/currentWeatherService';
+import weatherService from '../../../services/weatherService';
 
 export function* runFetchCurrentWeather() {
   yield put(actions.currentWeather.setIsPending(true));
@@ -15,16 +10,12 @@ export function* runFetchCurrentWeather() {
   const userLocationKey = yield select(selectors.geolocation.getUserLocationKey);
 
   const response = yield call(
-    apiService.request,
-    GET,
-    {
-      url: `${URLS.CURRENT_WEATHER}${userLocationKey}?details=true`,
-      processData: currentWeatherService.processData,
-    },
+    weatherService.runFetchWeather,
+    userLocationKey,
   );
 
   if (response.isError || !response.data) {
-    yield put(actions.currentWeather.setIsError);
+    yield put(actions.currentWeather.setIsError(true));
   } else {
     yield put(actions.currentWeather.setCurrentWeather(response.data));
   }

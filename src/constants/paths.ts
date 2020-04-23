@@ -1,5 +1,5 @@
 export default {
   root: '/',
-  search: '/search/:key',
+  search: '/:location/:country/:id',
   longTermForecast: '/long_term',
 };

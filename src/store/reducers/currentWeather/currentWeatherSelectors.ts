@@ -1,11 +1,11 @@
 import { RootState } from '../index';
-import { ICurrentWeatherProcessed } from '../../../types/currentWeather';
+import { IWeatherProcessed } from '../../../types/currentWeatherTypes';
 
 const isError = (state: RootState): boolean => state.currentWeather.isError;
 const isPending = (state: RootState): boolean => state.currentWeather.isPending;
 const getCurrentWeather = (
   state: RootState,
-): ICurrentWeatherProcessed | null => state.currentWeather.currentWeather;
+): IWeatherProcessed | undefined => state.currentWeather.currentWeather;
 
 export default {
   isError,
