@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import weatherTools from '../../utils/weatherTools';
-import { IWeatherProcessed } from '../../types/currentWeatherTypes';
+import { IWeatherProcessed } from '../../types/weatherTypes';
 
 interface Props {
   weather?: IWeatherProcessed,

@@ -1,12 +1,10 @@
 import { NullableString } from './genericTypes';
 
-export interface ICurrentWeatherFetched {
+export interface ICurrentWeatherFetched extends IPrecicipitationFetched {
   LocalObservationDateTime: string,
   EpochTime: number,
   WeatherText: string,
   WeatherIcon: number,
-  HasPrecipitation: boolean,
-  PrecipitationType: NullableString,
   IsDayTime: boolean
   Temperature: IMetricAndImperialUnit;
   MobileLink: string,
@@ -82,11 +80,68 @@ interface IUnit {
   unit: string,
 }
 
-export interface IWeatherProcessed {
+export interface IWeatherProcessed extends IPrecicipitation {
   temperature: IUnit,
   weatherText: string,
-  hasPrecipitation: boolean,
-  precipitationType: NullableString,
   realFeelTemperature: IUnit,
   pressure: IUnit,
+}
+
+export interface ILongTermWeatherFetched {
+  Headline: {
+    EffectiveDate: string,
+    EffectiveEpochDate: number,
+    Severity: number,
+    Text: string
+    Category: string,
+    EndDate: string
+    EndEpochDate: number,
+    MobileLink: string,
+    Link: string,
+  },
+  DailyForecasts: IDailyWeatherFethed[]
+}
+
+interface IDailyWeatherFethed {
+  Date: string,
+  EpochDate: number,
+  Temperature: {
+    Minimum: IUnitFetched,
+    Maximum: IUnitFetched,
+  },
+  Day: IWeatherFetched,
+  Night: IWeatherFetched,
+  Sources: string[]
+  'MobileLink': string,
+  'Link': string,
+}
+
+interface IWeatherFetched extends IPrecicipitationFetched {
+  Icon: number,
+  IconPhrase: string,
+  PrecipitationIntensity: string,
+}
+
+export interface IDailyWeatherProcessed {
+  date: string,
+  temperature: {
+    min: IUnit,
+    max: IUnit,
+  },
+  day: IWeather,
+  night: IWeather,
+}
+
+interface IWeather extends IPrecicipitation {
+  text: string,
+}
+
+interface IPrecicipitation {
+  hasPrecipitation: boolean,
+  precipitationType: NullableString,
+}
+
+interface IPrecicipitationFetched {
+  HasPrecipitation: boolean,
+  PrecipitationType: NullableString,
 }

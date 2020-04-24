@@ -3,6 +3,7 @@ export default {
   LOCATIONS_AUTOCOMPLETE: '/locations/v1/cities/autocomplete?q=',
   GEOPOSITION: '/locations/v1/cities/geoposition/search?q=',
   CURRENT_WEATHER: '/currentconditions/v1/',
+  LONG_TERM_WEATHER: '/forecasts/v1/daily/5day/',
 };
 
-export const API_KEY = 'kEqSF3Hcz350xoqgNQPCgCbyAlpJSsBp';
+export const API_KEY = '7bVkyNlhqCHDifFoib7MUdwCtLs7J5a0';

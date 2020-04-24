@@ -1,5 +1,5 @@
 import { RootState } from '../index';
-import { IWeatherProcessed } from '../../../types/currentWeatherTypes';
+import { IWeatherProcessed } from '../../../types/weatherTypes';
 
 const isError = (state: RootState): boolean => state.currentWeather.isError;
 const isPending = (state: RootState): boolean => state.currentWeather.isPending;

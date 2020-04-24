@@ -1,6 +1,6 @@
 import { RootState } from '../index';
 import { IProcessedGeoposition } from '../../../types/geolocationTypes';
-import { IWeatherProcessed } from '../../../types/currentWeatherTypes';
+import { IWeatherProcessed } from '../../../types/weatherTypes';
 
 const getSearchValue = (state: RootState): string => state.searchWeather.searchValue;
 

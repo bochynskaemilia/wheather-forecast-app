@@ -1,4 +1,4 @@
-import { ICurrentWeatherFetched, IWeatherProcessed } from '../types/currentWeatherTypes';
+import { ICurrentWeatherFetched, IWeatherProcessed } from '../types/weatherTypes';
 import apiService from './apiService';
 import { GET } from '../constants/methods';
 import URLS from '../constants/urls';

@@ -2,6 +2,11 @@
   background: white;
   padding: $regular-padding;
   margin-bottom: $big-margin;
+
+  &--long-term {
+    min-height: 17.75rem;
+    width: 33%;
+  }
 }
 
 .weather-list {

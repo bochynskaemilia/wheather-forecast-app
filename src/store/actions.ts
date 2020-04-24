@@ -4,6 +4,8 @@ import { currentWeatherActions } from './reducers/currentWeather/currentWeatherR
 import { searchWeatherActions } from './reducers/searchWeather/searchWeatherReducer';
 import searchWeatherSagaActions from './reducers/searchWeather/searchWeatherSagaActions';
 import currentWeatherSagaActions from './reducers/currentWeather/currentWeatherSagaActions';
+import { longTermWeatherActions } from './reducers/longTermWeather/longTermWeatherReducer';
+import longTermWeatherSagaActions from './reducers/longTermWeather/longTermWeatherSagaActions';
 
 const actions = {
   geolocation: geolocationActions,
@@ -12,6 +14,8 @@ const actions = {
   currentWeatherSaga: currentWeatherSagaActions,
   searchWeather: searchWeatherActions,
   searchWeatherSaga: searchWeatherSagaActions,
+  longTermWeather: longTermWeatherActions,
+  longTermWeatherSaga: longTermWeatherSagaActions,
 };
 
 export default actions;

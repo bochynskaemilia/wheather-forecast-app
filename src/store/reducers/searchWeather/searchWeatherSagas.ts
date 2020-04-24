@@ -2,6 +2,7 @@ import {
   call, put, select, takeLatest,
 } from 'redux-saga/effects';
 
+import { PayloadAction } from '@reduxjs/toolkit';
 import actions from '../../actions';
 import apiService from '../../../services/apiService';
 import URLS from '../../../constants/urls';
@@ -9,7 +10,6 @@ import { GET } from '../../../constants/methods';
 import selectors from '../../selectors';
 import searchWeatherService from '../../../services/locationsService';
 import weatherService from '../../../services/weatherService';
-import { PayloadAction } from '@reduxjs/toolkit';
 
 export function* runFetchAutocompleteLocations() {
   const searchValue = yield select(selectors.searchWeather.getSearchValue);

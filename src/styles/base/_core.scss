@@ -33,7 +33,7 @@ body {
 
 .page {
   background: $background-color;
-  padding: $page-margin;
+  padding: $page-margin-small $page-margin;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

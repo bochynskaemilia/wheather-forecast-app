@@ -1,27 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IWeatherProcessed } from '../../../types/weatherTypes';
+import { IDailyWeatherProcessed } from '../../../types/weatherTypes';
 
 interface InitialState {
   isError: boolean,
   isPending: boolean,
-  currentWeather?: IWeatherProcessed,
+  longTermWeather?: IDailyWeatherProcessed[],
 }
 
 const initialState: InitialState = {
   isError: false,
   isPending: false,
-  currentWeather: undefined,
+  longTermWeather: undefined,
 };
 
-const currentWeatherReducer = createSlice({
+const longTermWeatherReducer = createSlice({
 
-  name: 'currentWeather',
+  name: 'longTermWeather',
   initialState,
 
   reducers: {
 
-    setCurrentWeather(state, { payload }: PayloadAction<IWeatherProcessed>) {
-      state.currentWeather = payload;
+    setLongTermWeather(state, { payload }: PayloadAction<IDailyWeatherProcessed[]>) {
+      state.longTermWeather = payload;
     },
 
     setIsError(state, { payload }: PayloadAction<boolean>) {
@@ -34,5 +34,5 @@ const currentWeatherReducer = createSlice({
   },
 });
 
-export const currentWeatherActions = currentWeatherReducer.actions;
-export default currentWeatherReducer.reducer;
+export const longTermWeatherActions = longTermWeatherReducer.actions;
+export default longTermWeatherReducer.reducer;

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IProcessedGeoposition } from '../../../types/geolocationTypes';
-import { IWeatherProcessed } from '../../../types/currentWeatherTypes';
+import { IWeatherProcessed } from '../../../types/weatherTypes';
 
 interface InitialState {
   searchValue: string,
