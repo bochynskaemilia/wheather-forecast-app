@@ -1,15 +1,23 @@
 .menu-item {
-  margin-right: $big-margin;
+  margin-right: $small-margin;
   display: flex;
   align-items: center;
   border-bottom: 0.125rem solid $transparent-color;
   min-height: $header-height;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin: 0 $big-margin;
+  }
 
   &__link {
     color: $font-secondary-color;
     text-transform: uppercase;
     letter-spacing: $small-letter-spacing;
     font-size: $font-size-small;
+
+    @media (max-width: $breakpoint-tablet) {
+      color: $font-color;
+    }
 
     &--focused {
       color: $primary-color;
@@ -18,5 +26,17 @@
 
   &:hover {
     border-color: $primary-color;
+  }
+}
+
+.menu {
+  @media (max-width: $breakpoint-tablet) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: $header-height;
+    width: 100%;
+    background: $background-color;
+    border-top: 0.063rem solid rgba(209, 209, 209, 1);
   }
 }

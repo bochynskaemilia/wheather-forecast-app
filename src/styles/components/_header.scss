@@ -1,5 +1,5 @@
 .header {
-  padding: 0 $page-margin;
+  padding: 0 $page-padding;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,6 +23,10 @@
     position: absolute;
     top: 0;
     bottom: 0;
+  }
+
+  @media (max-width: $breakpoint-desktop) {
+    padding: 0 $page-padding-tablet;
   }
 }
 

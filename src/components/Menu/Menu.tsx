@@ -14,11 +14,11 @@ const menuItems = [
 ] as MenuItemProps[];
 
 const Menu: FC = () => (
-  <>
+  <div className="menu flex-container">
     {
       menuItems.map((item) => <MenuItem key={item.label} label={item.label} link={item.link} />)
     }
-  </>
+  </div>
 );
 
 export default Menu;

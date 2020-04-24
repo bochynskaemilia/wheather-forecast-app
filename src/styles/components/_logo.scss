@@ -8,10 +8,18 @@
   &__icon {
     color: $primary-color;
     font-size: $font-size-logo-sun;
+
+    @media (max-width: $breakpoint-desktop-big) {
+      margin-right: $regular-margin;
+    }
   }
 
   &__caption {
     margin: 0 $big-margin 0 $little-margin;
     color: $font-secondary-color;
+
+    @media (max-width: $breakpoint-desktop-big) {
+      display: none;
+    }
   }
 }

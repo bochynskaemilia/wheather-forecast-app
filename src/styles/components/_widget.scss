@@ -1,9 +1,13 @@
 .widget {
   background: $tertiary-color;
   margin: $regular-margin;
-  padding: $small-padding $regular-padding;
+  padding: $small-padding;
   border-radius: $primary-radius;
   color: $font-secondary-color;
+
+  @media (max-width: $breakpoint-phone) {
+    display: none;
+  }
 }
 
 .weather-item {

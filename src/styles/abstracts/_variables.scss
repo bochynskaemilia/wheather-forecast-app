@@ -1,7 +1,8 @@
 // margin and padding
 
-$page-margin: 10rem;
-$page-margin-small: 7rem;
+$page-padding: 10rem;
+$page-padding-small: 7rem;
+$page-padding-tablet: 1rem;
 
 $little-margin: 0.25rem;
 $small-margin: 0.5rem;
@@ -58,3 +59,10 @@ $background-color: #efeeea;
 // radius
 
 $primary-radius: 0.25rem;
+
+// breakpoints
+
+$breakpoint-desktop: 992px;
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 600px;
+$breakpoint-desktop-big: 1200px;

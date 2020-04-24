@@ -6,6 +6,12 @@
   &--long-term {
     min-height: 17.75rem;
     width: 33%;
+
+    @media (max-width: $breakpoint-desktop) {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
   }
 }
 
