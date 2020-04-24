@@ -10,7 +10,9 @@ interface Props {
 
 const WeatherTile: FC<Props> = ({ weather, location, country }) => (
   <div className="tile">
-    <h2 className="body-header">{`Current weather in ${location}, ${country}`}</h2>
+    <h2 className="body-header">
+      {`Current weather in ${location}, ${country}`}
+    </h2>
     <ul className="weather-list">
       <li className="weather-list__item">
         {weather?.weatherText}

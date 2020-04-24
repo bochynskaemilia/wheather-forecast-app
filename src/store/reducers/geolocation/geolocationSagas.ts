@@ -29,7 +29,6 @@ export function* runFetchGeolocation() {
       yield put(actions.geolocation.setLocationUnavailable(true));
     } else {
       yield put(actions.geolocation.setUserLocationKey(response.data));
-      yield put(actions.geolocation.setLocationUnavailable(false));
     }
   } catch (error) {
     yield put(actions.geolocation.setLocationUnavailable(true));

@@ -3,9 +3,7 @@ import { IProcessedGeoposition } from '../../../types/geolocationTypes';
 import { IWeatherProcessed } from '../../../types/weatherTypes';
 
 const getSearchValue = (state: RootState): string => state.searchWeather.searchValue;
-
 const getWeather = (state: RootState): IWeatherProcessed | undefined => state.searchWeather.weather;
-
 const isAutocompleteError = (state: RootState): boolean => state.searchWeather.autocompleteError;
 const isSearchError = (state: RootState): boolean => state.searchWeather.isSearchError;
 const isSearchPending = (state: RootState): boolean => state.searchWeather.isPending;

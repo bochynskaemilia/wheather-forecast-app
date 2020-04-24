@@ -6,6 +6,7 @@ const processData = (
   const {
     Date, Temperature, Day, Night,
   } = daily;
+
   return {
     date: Date,
     temperature: {
