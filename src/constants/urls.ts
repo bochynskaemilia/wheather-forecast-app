@@ -6,4 +6,4 @@ export default {
   LONG_TERM_WEATHER: '/forecasts/v1/daily/5day/',
 };
 
-export const API_KEY = '7bVkyNlhqCHDifFoib7MUdwCtLs7J5a0';
+export const API_KEY = 'IGh15OGIBpQxmcXjkjn7DAD3O6Hw4s7o';

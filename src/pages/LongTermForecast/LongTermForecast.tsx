@@ -16,6 +16,7 @@ const LongTermForecast = () => {
   const weather = useSelector(selectors.longTermWeather.getLongTermWeather);
   const isError = useSelector(selectors.longTermWeather.isError);
   const isPending = useSelector(selectors.longTermWeather.isPending);
+  const geolocationUnavailable = useSelector(selectors.geolocation.isUnavailable);
 
   useEffect(() => {
     if (userLocationKey) {
@@ -31,7 +32,7 @@ const LongTermForecast = () => {
       }
       <div className="long-term">
         {
-          isError && <Error message="Long-term forecast unavailable" />
+          (isError || geolocationUnavailable) && <Error message="Long-term forecast unavailable" />
         }
         {
           isPending && <Loader />

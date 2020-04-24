@@ -13,11 +13,7 @@ const OneDayForecast = () => {
   return (
     <div className="daily-page page">
       {
-        geolocationUnavailable && (
-          <div className="flex-full-width">
-            <Error message="User location is unavailable" />
-          </div>
-        )
+        geolocationUnavailable && <Error message="User location is unavailable" />
       }
       {
         geolocationPending && <Loader />
