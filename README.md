@@ -1,5 +1,13 @@
 # Weather forecast app
 
+This is a weather forecast app that allows the user to check short and long-term forecasts either for the user's location or the searched location.
+
+### Versions
+#### Node
+`v13.7.0`
+#### NPM
+`6.13.6`
+
 ## Available Scripts
 
 In the project directory, you can run:
